@@ -1,1 +1,43 @@
-<p>dynamic-table works!</p>
+<div class="px-8">
+  <h1 class="flex justify-content-center">Tabla Dinamica</h1>
+
+  <p-table
+    class="border-round"
+    [value]="users"
+    selectionMode="single"
+    [(selection)]="selectedUser"
+    [paginator]="true"
+    [rows]="7"
+    (onRowSelect)="onRowSelected($event)"
+  >
+
+    <ng-template
+      pTemplate="caption"
+      class="flex justify-content-start"
+    >
+      <div>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Buscar por nombre" />
+            </span>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+        <tr [pSelectableRow]="user">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+    </ng-template>
+  </p-table>
+</div>

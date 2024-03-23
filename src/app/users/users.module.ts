@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsersRoutingModule } from './users-routing.module';
 import { UsersHomeComponent } from './pages/users-home/users-home.component';
 import { UserInformationComponent } from './pages/user-information/user-information.component';
 import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.component';
 
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    TableModule,
+    InputTextModule,
   ]
 })
 export class UsersModule { }
