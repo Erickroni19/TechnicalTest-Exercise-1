@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../../interfaces/users.interface';
 import { TableRowSelectEvent } from 'primeng/table';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,19 +10,25 @@ import { TableRowSelectEvent } from 'primeng/table';
   styles: [
   ]
 })
-export class DynamicTableComponent implements OnInit{
+export class DynamicTableComponent {
 
   @Input()
   public users: User[] = [];
 
-  selectedUser!: User;
+  public selectedUser!: User;
+  public name = new FormControl('');
 
-  ngOnInit(): void {
-
-  }
 
   onRowSelected(event: TableRowSelectEvent): void {
     console.log(this.selectedUser, event.data);
+
+  }
+
+  filterByName(users: User[]): User[]{
+
+    const name = this.name.value?.toLocaleLowerCase()
+
+    return users.filter( user => user.name.toLowerCase().includes(name!));
 
   }
 

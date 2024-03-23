@@ -1,9 +1,9 @@
 <div class="px-8">
-  <h1 class="flex justify-content-center">Tabla Dinamica</h1>
+  <h2 class="flex justify-content-center font-semibold">Tabla Dinámica</h2>
 
   <p-table
     class="border-round"
-    [value]="users"
+    [value]="filterByName(users)"
     selectionMode="single"
     [(selection)]="selectedUser"
     [paginator]="true"
@@ -11,16 +11,25 @@
     (onRowSelect)="onRowSelected($event)"
   >
 
-    <ng-template
-      pTemplate="caption"
-      class="flex justify-content-start"
-    >
-      <div>
-            <span class="p-input-icon-left ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" placeholder="Buscar por nombre" />
-            </span>
-        </div>
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <span class="p-input-icon-left ml-auto flex-1">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText type="text"
+              placeholder="Buscar por nombre"
+              [formControl]="name"
+            />
+        </span>
+        <button
+          pButton label="Limpiar Filtro"
+          class="p-button-outlined ui-button hover:shadow-3"
+          icon="pi pi-filter-slash"
+          (click)="name.setValue('')"
+        >
+        </button>
+      </div>
+
     </ng-template>
 
     <ng-template pTemplate="header">
