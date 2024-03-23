@@ -1,8 +1,7 @@
-<div class="px-8">
-  <h2 class="flex justify-content-center font-semibold">Lista De Usuarios</h2>
 
+<h3 class="flex justify-content-center font-semibold">Lista De Usuarios</h3>
+<p-card class="border-round-xl">
   <p-table
-    class="border-round"
     [value]="filterByName(users)"
     selectionMode="single"
     [(selection)]="selectedUser"
@@ -49,4 +48,5 @@
         </tr>
     </ng-template>
   </p-table>
-</div>
+</p-card>
+

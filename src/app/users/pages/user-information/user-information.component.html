@@ -1,1 +1,60 @@
 
+<h3 class="flex justify-content-center font-semibold">Información Detallada</h3>
+<p-panel header="Detalles De Usuario">
+  <button
+    routerLink="/home"
+    pButton label="Regresar"
+    class="p-button-text ui-button hover:shadow-3"
+    icon="pi pi-arrow-left"
+  >
+  </button>
+  <ng-container *ngIf="userInformation">
+    <div class="flex gap-3 ">
+      <div class="flex-1 ">
+        <p-card>
+          <ng-template pTemplate="title">
+            Información Basica
+          </ng-template>
+          <ng-template pTemplate="content">
+            <ul>
+              <li><b>ID:</b> {{ userInformation.id }}</li>
+              <li><b>Nombre:</b> {{ userInformation.name }}</li>
+              <li><b>Username:</b> {{ userInformation.username }}</li>
+              <li><b>Email:</b> {{ userInformation.email }}</li>
+            </ul>
+          </ng-template>
+        </p-card>
+      </div>
+      <div class="flex-1">
+        <p-card>
+          <ng-template pTemplate="title">
+            Dirección
+          </ng-template>
+          <ng-template pTemplate="content">
+            <ul>
+              <li><b>Calle:</b> {{ userInformation.address.street }}</li>
+              <li><b>Suite:</b> {{ userInformation.address.suite }}</li>
+              <li><b>Ciudad:</b> {{ userInformation.address.city }}</li>
+              <li><b>Código Postal:</b> {{ userInformation.address.zipcode }}</li>
+            </ul>
+          </ng-template>
+        </p-card>
+      </div>
+      <div class="flex-1">
+        <p-card class="height">
+          <ng-template pTemplate="title">
+            Compañia
+          </ng-template>
+          <ng-template pTemplate="content">
+            <ul>
+              <li><b>Nombre:</b> {{ userInformation.company.name }}</li>
+              <li><b>Catch Phrase:</b> {{ userInformation.company.catchPhrase }}</li>
+            </ul>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </ng-container>
+  <span *ngIf="!userInformation" class="text-center">No Hay Información Disponible</span>
+</p-panel>
+

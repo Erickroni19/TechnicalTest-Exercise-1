@@ -1,8 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { User } from '../../interfaces/users.interface';
 import { UsersService } from '../../services/users.service';
 import { FormControl } from '@angular/forms';
-import { TableRowSelectEvent } from 'primeng/table';
 import { Router } from '@angular/router';
 
 @Component({
