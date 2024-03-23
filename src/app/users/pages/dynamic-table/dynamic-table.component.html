@@ -1,5 +1,5 @@
 <div class="px-8">
-  <h2 class="flex justify-content-center font-semibold">Tabla Dinámica</h2>
+  <h2 class="flex justify-content-center font-semibold">Lista De Usuarios</h2>
 
   <p-table
     class="border-round"
@@ -8,7 +8,7 @@
     [(selection)]="selectedUser"
     [paginator]="true"
     [rows]="7"
-    (onRowSelect)="onRowSelected($event)"
+    (click)="onRowSelected()"
   >
 
     <ng-template pTemplate="caption">
@@ -17,7 +17,7 @@
             <i class="pi pi-search"></i>
             <input
               pInputText type="text"
-              placeholder="Buscar por nombre"
+              placeholder="Filtrar por nombre"
               [formControl]="name"
             />
         </span>

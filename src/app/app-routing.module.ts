@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersHomeComponent } from './users/pages/users-home/users-home.component';
+import { DynamicTableComponent } from './users/pages/dynamic-table/dynamic-table.component';
 import { UserInformationComponent } from './users/pages/user-information/user-information.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: UsersHomeComponent,
+    component: DynamicTableComponent,
   },
   {
     path: 'user-information',

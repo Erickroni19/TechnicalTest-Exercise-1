@@ -8,7 +8,9 @@ import { User } from '../interfaces/users.interface';
 })
 export class UsersService {
 
-  private baseUrl: string = 'https://jsonplaceholder.typicode.com'
+  private baseUrl: string = 'https://jsonplaceholder.typicode.com';
+
+  public user?: User;
 
   constructor(private http: HttpClient) { }
 
@@ -19,5 +21,9 @@ export class UsersService {
         catchError( error => of([]))
       );
 
+  }
+
+  saveUserData(userData: User): void {
+    this.user = userData;
   }
 }
