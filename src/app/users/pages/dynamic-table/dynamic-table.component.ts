@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'users-home',
   templateUrl: './dynamic-table.component.html',
-  styles: [
-  ]
+  styleUrls: ['./dynamic-table.component.css']
 })
 export class DynamicTableComponent implements OnInit{
 

@@ -5,8 +5,7 @@ import { User } from '../../interfaces/users.interface';
 @Component({
   selector: 'app-user-information',
   templateUrl: './user-information.component.html',
-  styles: [
-  ]
+  styleUrls: ['./user-information.component.css']
 })
 export class UserInformationComponent implements OnInit{
 
