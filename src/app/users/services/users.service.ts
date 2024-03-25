@@ -32,7 +32,7 @@ export class UsersService {
 
   }
 
-  deletedLocalStorage(): void {
+  deleteLocalStorage(): void {
 
     localStorage.removeItem('user');
 
