@@ -21,4 +21,9 @@
   flex: 1;
 }
 
+@media (max-width: 899px){
+  .container-user-information{
+    padding: 0 10px;
+  }
+}
 

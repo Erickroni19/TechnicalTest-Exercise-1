@@ -26,4 +26,17 @@ export class UsersService {
   saveUserData(userData: User): void {
     this.user = userData;
   }
+
+  private saveLocalStorage(): void {
+
+    localStorage.setItem('user', JSON.stringify(this.user));
+
+  }
+
+  private loadLocalStorage(): void {
+  if(!localStorage.getItem('user')) return;
+
+  this.user = JSON.parse(localStorage.getItem('user')!);
+
+  }
 }

@@ -1,8 +1,15 @@
 
-
 <div class="container-dynamic-table">
   <h3 class="title">Lista De Usuarios</h3>
-  <p-card class="card-container">
+
+  <p-progressSpinner
+    *ngIf="isLoading"
+    class="spinner"></p-progressSpinner>
+
+  <p-card
+    *ngIf="!isLoading"
+    class="card-container"
+  >
     <p-table
       [value]="filterByName(users)"
       selectionMode="single"
@@ -28,7 +35,7 @@
             icon="pi pi-filter-slash"
             (click)="name.setValue('')"
           >
-          <span> Limpiar Filtro</span>
+          <span class="label-button">Limpiar Filtro</span>
           </button>
         </div>
 

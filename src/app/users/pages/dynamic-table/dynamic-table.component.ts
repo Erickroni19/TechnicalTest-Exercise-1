@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class DynamicTableComponent implements OnInit{
 
+  public isLoading: boolean = false;
   public users: User[] = [];
   public selectedUser?: User;
   public name = new FormControl('');
@@ -22,8 +23,18 @@ export class DynamicTableComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    this.isLoading = true;
+
     this.usersService.getUsers()
-      .subscribe( users => this.users = users);
+      .subscribe( users =>{
+        this.users = users;
+
+
+        setTimeout( () => {
+          if(users.length > 0) this.isLoading = false;
+        },400)
+
+      });
   }
 
   onRowSelected(): void {
