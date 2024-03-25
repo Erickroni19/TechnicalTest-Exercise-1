@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../interfaces/users.interface';
 
@@ -7,16 +7,22 @@ import { User } from '../../interfaces/users.interface';
   templateUrl: './user-information.component.html',
   styleUrls: ['./user-information.component.css']
 })
-export class UserInformationComponent implements OnInit{
+export class UserInformationComponent implements OnInit, OnDestroy{
 
   public userInformation?: User;
 
   constructor(private usersService: UsersService){}
 
   ngOnInit(): void {
-    console.log(this.usersService.user);
 
     this.userInformation = this.usersService.user;
+
+  }
+
+  ngOnDestroy(): void {
+
+    this.usersService.deleteLocalStorage();
+
   }
 
 }
