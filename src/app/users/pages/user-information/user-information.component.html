@@ -3,16 +3,17 @@
   <p-panel header="Detalles De Usuario">
     <button
       routerLink="/home"
-      pButton label="Regresar"
-      class="p-button-text ui-button hover:shadow-3"
-      icon="pi pi-arrow-left"
+      class="p-button-text ui-button"
+      pButton
     >
+      <i class="pi pi-arrow-left back-icon"></i>
+      <span class="back-text">Regresar</span>
     </button>
     <ng-container *ngIf="userInformation">
       <div class="panel-container">
         <div class="basic-information-card">
           <p-card>
-            <ng-template pTemplate="title">
+            <ng-template class="title-card" pTemplate="title" >
               Información Basica
             </ng-template>
             <ng-template pTemplate="content">
@@ -27,7 +28,7 @@
         </div>
         <div class="address-card">
           <p-card>
-            <ng-template pTemplate="title">
+            <ng-template pTemplate="title" >
               Dirección
             </ng-template>
             <ng-template pTemplate="content">

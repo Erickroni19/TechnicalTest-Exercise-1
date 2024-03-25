@@ -21,7 +21,7 @@ export class UserInformationComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
 
-    this.usersService.deleteLocalStorage();
+    this.usersService.deletedLocalStorage();
 
   }
 

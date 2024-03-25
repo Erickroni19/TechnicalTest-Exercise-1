@@ -10,9 +10,19 @@
 
 .panel-container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   gap: 15px;
+}
+
+.back-icon{
+  font-weight: 700;
+}
+
+.back-text{
+  margin-left: 5px;
+  font-weight: 700;
 }
 
 .basic-information-card,
@@ -21,9 +31,25 @@
   flex: 1;
 }
 
-@media (max-width: 899px){
+@media (max-width: 952px){
   .container-user-information{
     padding: 0 10px;
+  }
+}
+
+@media (max-width: 441px){
+
+  .panel-container {
+    margin-top: -25px;
+  }
+
+  ::ng-deep .p-card .p-card-title {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .back-text{
+    display: none;
   }
 }
 
